@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookstore HomePage</title>
+
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <br />
+  <h1>Welcome to Arpit's Bookstore</h1>
+  <br />
+  <br />
+  <form action="register/">
+    {% csrf_token %}
+    <button type="submit" style="font-size: large">
+      register an account with this bookstore
+    </button>
+  </form>
+  <br />
+  <br />
+
+  <form action="login/">
+    {% csrf_token %}
+    <button type="submit" style="font-size: large">
+      login to your bookstore account
+    </button>
+  </form>
+
+  <!--{{name }} is from {{place}}-->
+</body>
+
+</html>

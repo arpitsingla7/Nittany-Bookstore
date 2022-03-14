@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+  }
+
+  button {
+    font-size: large;
+  }
+</style>
+
+<body>
+  <br />
+  <form action="/mystore/login/" style="margin-right: 100px; text-align: right">
+    {% csrf_token %}
+
+    <span>Hello, {{all_customers.firstname}} </span>
+    <span style="margin-left: 20px;"><a href="{% url 'logout' %}">Logout</a></span>
+
+
+    <!--<button type="submit">logout</button>-->
+
+  </form>
+  <br />
+  <h1>User Dashboard</h1>
+  <br />
+  <br />
+  <form action="/mystore/browsebook/" method="POST">
+    {% csrf_token %}
+    <button type="submit">browse books</button>
+  </form>
+  <br />
+  <br />
+
+  <form action="/mystore/browsecustomer/">
+    {% csrf_token %}
+    <button type="submit">browse customers</button>
+  </form>
+  <br />
+  <br />
+
+  <form action="/mystore/recommendedbooks/" method="POST">
+    {% csrf_token %}
+    <button type="submit">recommended books for you</button>
+  </form>
+  <br />
+  <br />
+
+  <form action="/mystore/degreeofseprsearch/">
+    {% csrf_token %}
+    <button type="submit">degree of seperation search for authors</button>
+  </form>
+  <br>
+  <br>
+
+  <form action="/mystore/orderhistory/" method="POST">
+    {% csrf_token %}
+    <button type="submit">Check Order Histroy</button>
+  </form>
+  <br />
+  <br />
+
+  <form action="/mystore/requestbook/">
+    {% csrf_token %}
+    <button type="submit">request book</button>
+  </form>
+  <br>
+  <br>
+
+</body>
+
+</html>

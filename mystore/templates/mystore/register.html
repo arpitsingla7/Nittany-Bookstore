@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register Account</title>
+</head>
+<style>
+  body {
+    text-align: center;
+  }
+
+  label {
+    font-size: 23px;
+  }
+</style>
+
+<body>
+  <br />
+
+  <form action="/mystore" style="margin-left: 100px; text-align: left">
+    {% csrf_token %}
+    <button type="submit">go back</button>
+  </form>
+  <br />
+  <h1>Registration Page</h1>
+
+  <br />
+  <br />
+
+  <form action="/mystore/register/" method="post">
+    {% csrf_token %}
+    <br />
+    <label> Username : </label>
+    <input type="text" id="username" name="username" size="18" />
+    <br />
+    <br />
+    <label> Firstname </label>
+    <input type="text" name="firstname" size="18" /> <br />
+    <br />
+
+    <label> Lastname: </label>
+    <input type="text" name="lastname" size="18" /> <br />
+    <br />
+
+    <label> Phone : </label>
+
+    <input type="phone" name="phone" size="18" /> <br />
+    <br />
+    <label> Address : </label>
+    <br />
+    <textarea name="address" cols="80" rows="5" value="address"> </textarea>
+    <br />
+
+    <br />
+    <label> Password : </label>
+    <input type="Password" id="pass" name="pass" /> <br />
+    <br />
+    <br />
+
+    <input type="submit" />
+  </form>
+
+  <br>
+  <br>
+
+  {% for message in messages %}
+  <p id="messages">{{message}}</p>
+  {% endfor %}
+</body>
+
+</html>
+
+<!--<form action="/mystore/register/" method="POST">
+  {% csrf_token %}
+
+  {{form.username.label}}
+  {{form.username}}
+
+  {{form.password1.label}}
+  {{form.password1}}
+
+  {{form.password2.label}}
+  {{form.password2}}
+  <input type="submit" name="create user">
+
+  {{form.errors}}
+
+  {% for message in messages %}
+  <p id="messages">{{message}}</p>
+  {% endfor %}
+</form>-->
+
+
+
+<!-- 
+
+  <form action="/mystore/register/" style="text-align: center;" class="form-signin" method="post" id="user_form"
+  enctype="multipart/form-data">
+  <h2>Register</h2>
+  {% csrf_token %}
+  {% for field in form %}
+  <h6 style="color:red">{{field.errors}}</h6>
+  <div>
+
+    <label for="{{ field.id_for_label }}">{{ field.label_tag }}</label>
+  </div>
+  {{field}}
+  <br>
+  {% endfor %}
+  <br>
+  <input class="btn btn-primary " type="submit" name="submit" value="Register" />
+  <br>
+  <br>
+  <a class="btn btn-default " href="book:index"> Cancel </a>
+  <br>
+</form>
+
+-->

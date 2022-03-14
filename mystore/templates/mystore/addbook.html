@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+  <title>Add Book</title>
+  <style>
+    label {
+      font-size: 23px;
+      font-weight: bold;
+      margin-left: 200px;
+    }
+
+    p.bi {
+      display: inline;
+      font-size: 23px;
+      margin-left: 200px;
+    }
+
+    hr {
+      border-top: 2px solid;
+      text-align: center;
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <br />
+  <br />
+  <form action="/mystore/stockmanage/" style="margin-left: 100px; text-align: left">
+    {% csrf_token %}
+    <button type="submit">go back</button>
+  </form>
+
+  <br />
+  <br />
+  <h1 style="text-align: center">Add Book</h1>
+  <br />
+  <br />
+
+  <form action="/mystore/addbook/" method="POST" name="book">
+    {% csrf_token %}
+    <input type="submit" style="margin-left: 200px;" value="Add Book to the bookstore"></input>
+
+
+    <br /><br />
+    <label> ISBN : </label>
+    <input type="text" name="isbn" id="isbn" size="50" />
+    <br />
+    <br />
+    <label> Book Title : </label>
+    <input type="text" name="title" id="title" size="100" />
+    <br />
+    <br />
+    <label> Author : </label>
+    <input type="text" name="author" id="author" size="100" />
+    <br />
+    <br />
+    <label> Publisher : </label>
+    <input type="text" name="publisher" id="publisher" size="100" />
+    <br />
+    <br />
+    <label> Language : </label>
+    <input type="text" name="language" id="language" size="100" />
+    <br />
+    <br />
+    <label> Price : </label>
+    <input type="text" name="price" id="price" size="50" />
+    <br />
+    <br />
+    <label> Publication Date(YYYY-MM-DD) : </label>
+    <input type="text" name="date" id="date" size="50" />
+    <br />
+    <br />
+    <label> No. of Pages : </label>
+    <input type="text" name="pages" id="pages" size="50" />
+    <br />
+    <br />
+    <label> Keywords : </label>
+    <input type="text" name="keywords" id="keywords" size="100" />
+    <br />
+    <br />
+    <label> Subject : </label>
+    <input type="text" name="subject" id="subject" size="100" />
+    <br />
+    <br />
+    <label>Stock : </label>
+    <input type="text" name="stock" id="stock" size="50" />
+  </form>
+  <br />
+  <br />
+  <br />
+  <br />
+</body>
+
+</html>

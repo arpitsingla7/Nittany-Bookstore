@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Manager</title>
+</head>
+<style>
+  body {
+    text-align: center;
+    font-family: sans-serif
+  }
+
+  label {
+    font-size: 23px;
+  }
+</style>
+
+<body>
+  <br />
+  <form action="/mystore/managerdata/" style="margin-left: 100px; text-align: left">
+    {% csrf_token %}
+    <button type="submit">go back</button>
+  </form>
+
+  <h1>Change access level</h1>
+
+
+  <br />
+
+  <h3>remember: 1 is manager level access and 0 is customer level access</h3>
+
+  <br>
+
+  <form action="/mystore/changeaccess/{{all_customers.username}}/" method="POST">
+    {% csrf_token %}
+    <br />
+    <label style="display: inline;"> <strong>Username :</strong> </label>
+    <p class="bi" style="font-size: 23px; display:inline; margin-left: 5px;">{{all_customers.username}}</p>
+    <br />
+    <br />
+    <label> <strong>Access level :</strong> </label>
+    <input type="text" id="accesslevel" name="accesslevel" size="10" />
+    <br />
+    <br />
+    <br />
+
+    <button type="submit" style="padding: 5px; font-size: large;">change access</button>
+  </form>
+
+  <br>
+  <br>
+  {% for message in messages %}
+  <p id="messages">{{message}}</p>
+  {% endfor %}
+</body>
+
+</html>

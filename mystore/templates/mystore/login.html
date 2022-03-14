@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>login</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    label {
+      font-size: 23px;
+    }
+  </style>
+</head>
+
+<body>
+  <br />
+  <br />
+
+  <form action="/mystore" style="margin-left: 100px; text-align: left">
+    {% csrf_token %}
+    <button type="submit">go back</button>
+  </form>
+  <br><br>
+  <h1>Login Page</h1>
+  <br />
+  <br />
+
+  <form action="/mystore/login/" method="POST">
+    {% csrf_token %}
+    <br />
+    <label> Username : </label>
+    <input type="text" id="username" name="username" />
+    <br />
+
+    <br />
+    <label> Password : </label>
+    <input type="Password" id="password" name="password" /> <br />
+    <br />
+    <br />
+
+    <!--<input type="submit" />-->
+    <button type="submit" style="
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-right: 10px;
+          padding-left: 10px;
+          font-size: large;
+        ">
+      Login
+    </button>
+  </form>
+
+  <br>
+  <br>
+
+  {% for message in messages %}
+  <p id="messages" style="font-size: large;">{{message}}</p>
+  {% endfor %}
+
+  <!--{{name }} is from {{place}}-->
+</body>
+
+</html>
